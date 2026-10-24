@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#086b35">
+<title>CABVEC — Cabinet Vétérinaire du Centre</title>
+<meta name="description" content="Catalogue CABVEC, Cabinet Vétérinaire du Centre, Yaoundé, Cameroun.">
+<style>
+:root{--green:#086b35;--green2:#0b8d4a;--mint:#eaf7ef;--ink:#173327;--muted:#63746b;--line:#dce9e0;--white:#fff;--bg:#f6faf7}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+header{background:linear-gradient(135deg,#07552c,#0a8a48);color:white;padding:18px max(18px,calc((100% - 1120px)/2));}
+.brand{display:flex;align-items:center;gap:12px}.logo{width:52px;height:52px;border:2px solid #c9f0d6;border-radius:50%;display:grid;place-items:center;font-size:26px;background:#fff;color:var(--green)}.brand h1{margin:0;font-size:1.3rem;letter-spacing:.04em}.brand p{margin:2px 0 0;color:#e0f6e7;font-size:.85rem}
+nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}nav button,.btn{border:0;border-radius:12px;padding:10px 14px;background:white;color:var(--green);font-weight:700;cursor:pointer}nav button.active, .btn.primary{background:#07552c;color:white;border:1px solid #0b8d4a}
+main{max-width:1120px;margin:0 auto;padding:20px 16px 48px}.hero{display:grid;grid-template-columns:1.4fr .8fr;gap:18px;align-items:center;background:linear-gradient(135deg,#e7f6ec,#fff);border:1px solid var(--line);border-radius:22px;padding:26px;margin-bottom:20px}.hero h2{font-size:clamp(1.6rem,4vw,2.5rem);line-height:1.08;margin:0 0 12px;color:#07552c}.hero p{color:#476454;line-height:1.55}.hero-visual{font-size:4.4rem;text-align:center;background:#fff;border-radius:18px;padding:20px}.tag{display:inline-block;background:#d3f0dd;color:#07552c;border-radius:99px;padding:5px 10px;font-size:.8rem;font-weight:700}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}.toolbar input,.toolbar select,input,textarea,select{font:inherit;border:1px solid #cddfd3;border-radius:11px;padding:11px;background:#fff;color:var(--ink)}.toolbar input{flex:1;min-width:190px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.card{background:white;border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:0 4px 16px #12351b08}.card h3{margin:7px 0;font-size:1rem}.card p{color:var(--muted);font-size:.9rem;line-height:1.4}.product-icon{height:70px;border-radius:12px;background:var(--mint);display:grid;place-items:center;font-size:2rem}.ref{font-size:.75rem;color:#53735f;font-weight:700}.card .btn{width:100%;margin-top:8px;border:1px solid var(--line)}
+.section-title{display:flex;justify-content:space-between;align-items:end;gap:10px;margin:24px 0 12px}.section-title h2{margin:0;color:#07552c}.section-title small{color:var(--muted)}
+.services{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.service{background:white;border:1px solid var(--line);border-radius:15px;padding:18px 12px;text-align:center}.service b{display:block;margin-top:8px}.service span{font-size:1.8rem}
+.notice{border-left:4px solid #d59d25;background:#fff8e6;padding:12px 14px;border-radius:8px;color:#6e5417;font-size:.86rem;line-height:1.45;margin-top:18px}
+.panel{background:white;border:1px solid var(--line);border-radius:18px;padding:18px;margin-bottom:16px}.panel h2{margin-top:0;color:#07552c}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.formgrid label{display:grid;gap:6px;font-size:.9rem;font-weight:600}.formgrid .wide{grid-column:1/-1}.hidden{display:none!important}.row{display:flex;justify-content:space-between;gap:12px;align-items:center;border-bottom:1px solid var(--line);padding:12px 0}.row:last-child{border:0}.pill{font-size:.75rem;background:#eaf7ef;padding:4px 8px;border-radius:20px;color:#086b35}
+footer{text-align:center;padding:24px;background:#063f23;color:#d8f1e1;font-size:.85rem}.empty{padding:30px;text-align:center;color:var(--muted);background:white;border-radius:16px}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding:20px}.hero-visual{font-size:3.5rem}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.services{grid-template-columns:repeat(2,minmax(0,1fr))}.formgrid{grid-template-columns:1fr}.formgrid .wide{grid-column:auto}}
+@media(max-width:430px){.grid{grid-template-columns:1fr}.brand h1{font-size:1.1rem}nav button{flex:1}.section-title{align-items:start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand"><div class="logo">🐾</div><div><h1>CABVEC</h1><p>Cabinet Vétérinaire du Centre · Yaoundé</p></div></div>
+  <nav>
+    <button class="active" data-page="home">Accueil</button><button data-page="products">Produits</button><button data-page="services">Services</button><button data-page="cart">Panier <span id="cartCount">0</span></button><button data-page="admin">Administration</button>
+  </nav>
+</header>
+<main>
+<section id="homePage">
+  <div class="hero"><div><span class="tag">Yaoundé · Région du Centre</span><h2>Votre partenaire en santé animale.</h2><p>Découvrez les produits vétérinaires et les services du Cabinet Vétérinaire du Centre : conseils, suivi d'élevage, vaccination et livraison dans les zones desservies.</p><button class="btn primary" onclick="showPage('products')">Explorer le catalogue</button></div><div class="hero-visual">🐄 🐐 🐓 🐕</div></div>
+  <div class="section-title"><h2>Nos services</h2><small>Accompagnement et santé animale</small></div>
+  <div class="services">
+    <div class="service"><span>💬</span><b>Conseils</b><p>Informations et orientation</p></div>
+    <div class="service"><span>🐄</span><b>Suivi d'élevage</b><p>Accompagnement des éleveurs</p></div>
+    <div class="service"><span>💉</span><b>Vaccination</b><p>Sur demande et selon disponibilité</p></div>
+    <div class="service"><span>🚚</span><b>Livraison</b><p>Yaoundé et zones desservies</p></div>
+  </div>
+  <div class="section-title"><h2>Catalogue</h2><small id="productTotal"></small></div><div id="featured" class="grid"></div>
+  <div class="notice">Les produits peuvent être chargés depuis Supabase après configuration. Les prix et stocks absents restent à confirmer. Les commandes et paiements ne sont pas encore activés. Les médicaments et vaccins doivent être commercialisés et utilisés conformément aux règles applicables.</div>
+</section>
+<section id="productsPage" class="hidden">
+  <div class="section-title"><h2>Catalogue des produits</h2><small id="countLabel"></small></div><p id="catalogSource" class="pill">Catalogue de démonstration local</p>
+  <div class="toolbar"><input id="search" placeholder="Rechercher par nom ou référence…"><select id="category"><option value="">Toutes les catégories</option><option value="vitamine">Vitamines et compléments</option><option value="materiel">Matériel</option><option value="autre">Autres produits</option></select></div>
+  <div id="productGrid" class="grid"></div>
+  <div class="notice">Les désignations proviennent de la fiche de comptage fournie. Les catégories sont indicatives et devront être validées. Aucun prix, stock ou conseil d'utilisation n'est inventé.</div>
+</section>
+<section id="servicesPage" class="hidden">
+  <div class="section-title"><h2>Nos services</h2><small>CABVEC · Yaoundé</small></div>
+  <div class="services">
+    <div class="service"><span>💬</span><b>Conseils</b><p>Demande d'information et orientation.</p></div>
+    <div class="service"><span>🐄</span><b>Suivi d'élevage</b><p>Accompagnement selon les besoins de l'élevage.</p></div>
+    <div class="service"><span>💉</span><b>Vaccination</b><p>Organisation d'une demande de vaccination.</p></div>
+    <div class="service"><span>🚚</span><b>Vente et livraison</b><p>Demande de produits et vérification de la zone desservie.</p></div>
+  </div>
+  <div class="panel" style="margin-top:18px"><h2>Demander à être contacté</h2><p>Cette maquette ne transmet pas encore les formulaires. Une fois connectée au serveur, cette section pourra envoyer les demandes à l'équipe CABVEC.</p><div class="formgrid"><label>Nom<input placeholder="Votre nom"></label><label>Téléphone<input placeholder="Votre numéro"></label><label>Service souhaité<select><option>Conseils</option><option>Suivi d'élevage</option><option>Vaccination</option><option>Vente / livraison</option></select></label><label class="wide">Votre demande<textarea rows="3" placeholder="Expliquez brièvement votre besoin"></textarea></label></div><p><button class="btn primary" onclick="alert('Ce formulaire est encore en mode démonstration et ne transmet pas les données. Contacte CABVEC directement jusqu’à l’activation du serveur sécurisé.')">Envoyer une demande (serveur à activer)</button></p></div>
+</section>
+<section id="cartPage" class="hidden">
+  <div class="section-title"><h2>Mon panier</h2><small>Demande non transmise</small></div>
+  <div class="panel"><div id="cartItems"></div><div id="cartForm" class="hidden"><h2>Coordonnées de livraison</h2><div class="formgrid"><label>Nom complet<input id="buyerName" required placeholder="Nom et prénom"></label><label>Téléphone<input id="buyerPhone" required placeholder="Numéro de téléphone"></label><label class="wide">Quartier / lieu de livraison<input id="buyerAddress" required placeholder="Quartier à Yaoundé ou autre zone"></label><label>Mode de paiement<select id="payment"><option>Paiement à la livraison</option><option>Mobile Money (à configurer)</option></select></label></div><p class="notice">Le paiement Mobile Money n'est pas encore connecté. Cette démonstration ne transmet ni ne valide les commandes.</p><button class="btn primary" onclick="submitOrderNotice()">Envoyer ma demande</button><p id="orderStatus" role="status" aria-live="polite"></p></div></div>
+</section>
+<section id="adminPage" class="hidden">
+  <div class="section-title"><h2>Espace administrateur</h2><small>Configuration technique</small></div>
+  <div class="notice">Cette page ne fournit pas encore un espace administrateur sécurisé. La clé publique Supabase ne donne pas à elle seule le droit de modifier les produits : les règles RLS doivent rester activées. Ne placez jamais une clé secrète ou service_role dans ce fichier.</div>
+  <div class="panel"><h2>Connexion au catalogue Supabase</h2><p>Entre l’URL de ton projet et sa clé publique (<em>publishable</em> ou ancienne clé <em>anon</em>). Ces informations permettent de lire les produits autorisés par les règles de sécurité de la base.</p><div class="formgrid"><label class="wide">URL du projet<input id="sbUrl" type="url" placeholder="https://xxxx.supabase.co" autocomplete="url"></label><label class="wide">Clé publique Supabase<input id="sbKey" type="password" placeholder="Clé publique publishable / anon" autocomplete="off"></label></div><p><button class="btn primary" onclick="saveSupabaseConfig()">Enregistrer la configuration sur cet appareil</button> <button class="btn" onclick="connectSupabase()">Tester et charger les produits</button></p><p id="connectionStatus" role="status" aria-live="polite">Connexion non configurée.</p><small>La configuration est enregistrée uniquement dans le stockage local de ce navigateur. Pour la publication, la clé publique pourra être intégrée au site; jamais une clé secrète.</small></div>
+  <div class="panel"><h2>Ajouter un produit à la démonstration</h2><div class="formgrid"><label>Référence<input id="newRef" placeholder="Ex. CAB001"></label><label>Désignation<input id="newName" placeholder="Nom du produit"></label><label>Catégorie<select id="newCat"><option>Autres produits</option><option>Vitamines et compléments</option><option>Matériel</option><option>Antiparasitaires</option></select></label><label>Prix (facultatif)<input id="newPrice" type="number" placeholder="FCFA"></label><label class="wide">Photo (URL facultative)<input id="newPhoto" placeholder="URL de la photo"></label></div><p><button class="btn primary" onclick="addProduct()">Ajouter à la démo</button> <button class="btn" onclick="exportProducts()">Exporter le catalogue JSON</button></p></div>
+  <div class="panel"><h2>Résumé du catalogue</h2><div id="adminSummary"></div></div>
+</section>
+</main>
+<footer><strong>CABVEC — Cabinet Vétérinaire du Centre</strong><br>Yaoundé, Région du Centre, Cameroun<br>Catalogue prêt à configurer · Les commandes, paiements et comptes ne sont pas encore connectés.</footer>
+<script>
+const initialProducts = [{"ref": "AD3100", "name": "VITAMINE AD3E 100ML"}, {"ref": "AIG1620", "name": "AIGUILLE 16G*20MM"}, {"ref": "AMIT01", "name": "AMITRAZ 12.5% 100ML*120"}, {"ref": "AMIT1000", "name": "AMITRAZ 12,5% 1L"}, {"ref": "AMOX100", "name": "AMOXY 20% 100G"}, {"ref": "ANT100", "name": "ANTICOCC 100 G"}, {"ref": "ANT1000", "name": "ANTICOCC 1KG"}, {"ref": "ANTCC25", "name": "ANTICOCC 20 KG"}, {"ref": "ANTICOCC5", "name": "ANTICOCC 5KG"}, {"ref": "ANTMT", "name": "FLUNERVET 100ML"}, {"ref": "CAL200", "name": "CALCIUM 200 100 ML"}, {"ref": "CYPER10500", "name": "CYPERMETRINE 10% 500 ML"}, {"ref": "DEWO01", "name": "DEWORM 12 CP"}, {"ref": "DEX50", "name": "DEXAMETHAZONE 50 ML"}, {"ref": "DEXA100", "name": "DEXAMETHASONE 100ML"}, {"ref": "DICL1L", "name": "DICLAZURIEL 2.5% 1L"}, {"ref": "DOXCOL5KG", "name": "DOXYCOL 5KG"}, {"ref": "DOXYCOL100", "name": "DOXYCOL 100 G"}, {"ref": "ENE100", "name": "ENERVIT 100G"}, {"ref": "ENE1000", "name": "ENERVIT 1 KG"}, {"ref": "ENE5KG", "name": "ENERVIT 5KG"}, {"ref": "ENEVT20KG", "name": "ENERVIT 20KG"}, {"ref": "ERHY1KG", "name": "ERYTHROMICIN 20% 1KG"}, {"ref": "ERY100", "name": "ERYTHROMYCIN 20% 100 G"}, {"ref": "ES10", "name": "ESTRADUOL 10 ML"}, {"ref": "FER100B", "name": "FER PLUS INJ 100ML"}, {"ref": "FLUKG", "name": "FLUMEX 200 KG"}, {"ref": "FUR112,5", "name": "FURANALER 112,5mg"}, {"ref": "IMU500", "name": "IMMUNOMAX 500ML"}, {"ref": "ISO62", "name": "ISOVET 6.2G"}, {"ref": "IVE_250_", "name": "IVERMECTINE 2% 50 ML"}, {"ref": "IVE110", "name": "IVERMECTINE 1% 10 ML"}, {"ref": "IVE1100P10", "name": "IVERMECTINE 1% 100+10ML"}, {"ref": "IVE1500", "name": "IVERMECTINE 1% 500 ML"}, {"ref": "IVE150P5", "name": "IVERMECTINE 1% 50+5ML"}, {"ref": "IVMEC", "name": "IVERMEC PLUS 100 ML"}, {"ref": "LEV101000", "name": "LEVAMISOL INJ 10% 100 ML"}, {"ref": "LEV20100", "name": "LEVAMISOL 20% 1KG"}, {"ref": "LEV201000", "name": "LEVAMISOL 20% 100 G"}, {"ref": "LEVA205", "name": "LEVAMISOL 20% 5KG"}, {"ref": "LIN20100", "name": "LINCOMYCIN 20% 100g"}, {"ref": "AU", "name": "12 SEPTEMBRE 2026"}, {"ref": "LIN20KG", "name": "LINCOMYCIN 20% 1KG"}, {"ref": "MINO1000", "name": "MINERAL ORAL 1L"}, {"ref": "MINO20", "name": "MINERAL ORAL 20L"}, {"ref": "MINO5", "name": "MINERAL ORAL 5L"}, {"ref": "MU100", "name": "MULTIVIT 100 G"}, {"ref": "MU1000", "name": "MULTIVIT 1KG"}, {"ref": "MU15", "name": "MULTIVIT 15G"}, {"ref": "MUL10", "name": "MULTIVITAMIN 10 ML"}, {"ref": "MUL100P", "name": "MULTIVITAMIN 100 ML"}, {"ref": "MULTI5KG", "name": "MULTIVIT 5KG"}, {"ref": "NAL2500", "name": "NEW ALBEN BOLUS 2500"}, {"ref": "NEO5KG", "name": "NEOMYCIN 5KG"}, {"ref": "NEOM01", "name": "NEOMYCIN 100 G"}, {"ref": "OLIDIM6", "name": "DIMINZE PLUS 23.6 G"}, {"ref": "OLISAHZ", "name": "SAHELZENE 23.6"}, {"ref": "OXY10100D", "name": "OXYTET 10% 100ml ALU"}, {"ref": "OXY10100S", "name": "OXYTET 10% 100 ML"}, {"ref": "OXY20", "name": "OXYTET 20% 100 ML"}, {"ref": "OXY30100S", "name": "OXYTET 30% 100ML"}, {"ref": "OXY5100A", "name": "OXYMED 5% 100 ML"}, {"ref": "OXY5100D", "name": "OXYTET 5% 100 ML"}, {"ref": "OXY550A", "name": "OXYMED 5% 50 ML"}, {"ref": "OXY550D", "name": "OXYTET 5% 50 ML"}, {"ref": "OXYP100", "name": "OXYPURE 100 G"}, {"ref": "OXYP1000", "name": "OXYPURE 1 KG"}, {"ref": "OXYP5KG", "name": "OXYPURE 5 KG"}, {"ref": "OXYPUR_25", "name": "OXYPURE 25 KG"}, {"ref": "OXYS210", "name": "OXYSPRAY 24*210 ML"}, {"ref": "PEN20P", "name": "PENESTREP 20/20 100 ml"}, {"ref": "PEN40", "name": "PENI 40 100 ML"}, {"ref": "PETBOL", "name": "PET VITAMIN BOLUS"}, {"ref": "PETCALC", "name": "PET CALCIUM CP"}, {"ref": "PETCATV", "name": "VPET CAT VITAMIN"}, {"ref": "PHEN80100", "name": "PHENYVET 100ML"}, {"ref": "PROCPENI4MG", "name": "PROCAINE PENIVET 4 MEGA 20*20"}, {"ref": "SALV236", "name": "SALVIZEN 23,6G"}, {"ref": "SEN236", "name": "SENGAVET 23,6G"}, {"ref": "SEQ236G", "name": "SEQUZEN FORTE"}, {"ref": "SER20CC", "name": "SERINGUE 20CC"}, {"ref": "SHAMP", "name": "SHAMPOO 500 ML"}, {"ref": "SHAMPOO300", "name": "SHAMPOO 300 ML"}, {"ref": "TETR01", "name": "TETRAMISOL BOLUS"}, {"ref": "TLDOX100", "name": "TYLODOX 100 G"}, {"ref": "TLDOX1K", "name": "TYLODOX 1 KG"}, {"ref": "TOPDIM236", "name": "TOPDIMINAZENE"}, {"ref": "TY20100", "name": "TYLOSIN 20% 100 G"}, {"ref": "TY550B", "name": "TYLOSIN 5% 50ML AR"}, {"ref": "TYL1KG", "name": "TYLOSIN 20% 1KG"}, {"ref": "TYL20100AR", "name": "TYLOSIN 20% 100ML AR"}, {"ref": "TYL20100P", "name": "TYLOSIN 20% 100 ML"}, {"ref": "TYL5100A", "name": "TYLOSIN 5% 100 ML AR"}, {"ref": "TYL5100P", "name": "TYLOSIN 5% 100 ML"}, {"ref": "TYL900", "name": "TYLOSIN+SULFA 900MG"}, {"ref": "TYL900B", "name": "TYLOSIN BOLUS 600MG"}, {"ref": "TYLDX5KG", "name": "TYLODOX 5KG"}, {"ref": "VETANDR", "name": "VETOANTIDIAR 10g"}, {"ref": "VIT18BTE", "name": "VITA BOLUS 18G BOITE"}];
+let products = [...initialProducts];
+try { const saved = localStorage.getItem('cabvec_demo_products'); if(saved) products = JSON.parse(saved); } catch(e){}
+let cart = {};
+const SB_URL_KEY = 'cabvec_supabase_url';
+const SB_PUBLIC_KEY_KEY = 'cabvec_supabase_public_key';
+function loadSupabaseConfig(){
+  const url=localStorage.getItem(SB_URL_KEY)||'';
+  const key=localStorage.getItem(SB_PUBLIC_KEY_KEY)||'';
+  document.getElementById('sbUrl').value=url;
+  document.getElementById('sbKey').value=key;
+  if(url && key) document.getElementById('connectionStatus').textContent='Configuration enregistrée. Appuie sur « Tester et charger les produits ». ';
+}
+function saveSupabaseConfig(){
+  const url=document.getElementById('sbUrl').value.trim().replace(/\/$/,'');
+  const key=document.getElementById('sbKey').value.trim();
+  if(!/^https:\/\/[a-z0-9-]+\.supabase\.co$/i.test(url)){alert('Vérifie l’URL du projet : elle doit ressembler à https://xxxx.supabase.co');return;}
+  if(!key){alert('Ajoute la clé publique Supabase. Ne colle jamais une clé service_role ou une clé secrète.');return;}
+  localStorage.setItem(SB_URL_KEY,url);localStorage.setItem(SB_PUBLIC_KEY_KEY,key);
+  document.getElementById('connectionStatus').textContent='Configuration enregistrée sur cet appareil. Teste maintenant la connexion.';
+}
+async function connectSupabase(){
+  const url=(document.getElementById('sbUrl').value.trim()||localStorage.getItem(SB_URL_KEY)||'').replace(/\/$/,'');
+  const key=document.getElementById('sbKey').value.trim()||localStorage.getItem(SB_PUBLIC_KEY_KEY)||'';
+  const status=document.getElementById('connectionStatus');
+  if(!url||!key){status.textContent='Renseigne d’abord l’URL du projet et la clé publique.';return;}
+  if(!/^https:\/\/[a-z0-9-]+\.supabase\.co$/i.test(url)){status.textContent='URL invalide. Vérifie l’adresse du projet Supabase.';return;}
+  status.textContent='Connexion en cours…';
+  try{
+    const response=await fetch(url+'/rest/v1/products?select=id,reference,name,category,description,price_xaf,stock_quantity,photo_url,active&active=eq.true&order=name.asc',{headers:{apikey:key,Authorization:'Bearer '+key}});
+    if(!response.ok){const msg=await response.text();throw new Error('HTTP '+response.status+(msg?' — '+msg.slice(0,180):''));}
+    const rows=await response.json();
+    products=rows.map(p=>({id:p.id,ref:p.reference,name:p.name,category:p.category||'',description:p.description||'',price:p.price_xaf,stock:p.stock_quantity,photo:p.photo_url||''}));
+    localStorage.setItem(SB_URL_KEY,url);localStorage.setItem(SB_PUBLIC_KEY_KEY,key);
+    document.getElementById('catalogSource').textContent='Catalogue chargé depuis Supabase';
+    status.textContent='Connexion réussie : '+products.length+' produit(s) actif(s) chargé(s) depuis Supabase.';
+    render();
+  }catch(e){status.textContent='Échec de connexion. Vérifie l’URL, la clé publique, la table products et la policy de lecture RLS. Détail : '+e.message;}
+}
+function submitOrderNotice(){
+  const status=document.getElementById('orderStatus');
+  status.textContent='Les commandes réelles ne sont pas encore activées. Aucune donnée n’a été envoyée. Il faut d’abord installer une fonction serveur sécurisée qui vérifie les prix, le stock et les coordonnées.';
+}
+const icons = ["💊","🧴","🧪","💉","🩺","🐄","🐓","🐕"];
+function iconFor(p){let s=(p.name||"").toLowerCase();if(s.includes("aiguille")||s.includes("seringue"))return "🩺";if(s.includes("vit")||s.includes("mineral")||s.includes("calcium")||s.includes("ener"))return "🧴";if(s.includes("iverm")||s.includes("amitraz")||s.includes("cyper"))return "🧪";if(s.includes("shampoo"))return "🧼";return icons[(p.ref.length+p.name.length)%icons.length]}
+function catFor(p){let s=p.name.toLowerCase();if(s.includes("aiguille")||s.includes("seringue"))return "materiel";if(/vit|calcium|mineral|ener|immun|max|multivit/.test(s))return "vitamine";return "autre"}
+function priceText(p){return p.price !== null && p.price !== undefined && p.price !== "" && Number(p.price)>=0 ? Number(p.price).toLocaleString('fr-FR')+" FCFA" : "Prix à confirmer"}
+function productCard(p){return `<article class="card"><div class="product-icon">${p.photo?`<img src="${esc(p.photo)}" alt="" style="max-width:100%;max-height:70px">`:iconFor(p)}</div><div class="ref">${esc(p.ref)}</div><h3>${esc(p.name)}</h3><p>${priceText(p)}</p><button class="btn" onclick="addToCart('${escAttr(p.ref)}')">Demander des informations</button></article>`}
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function escAttr(s){return String(s??"").replace(/\\/g,"\\\\").replace(/'/g,"\\'")}
+function render(){let q=(document.getElementById('search')?.value||"").toLowerCase();let cat=document.getElementById('category')?.value||"";let filtered=products.filter(p=>(p.name+" "+p.ref).toLowerCase().includes(q)&&(!cat||catFor(p)===cat));document.getElementById('productGrid').innerHTML=filtered.length?filtered.map(productCard).join(""):'<div class="empty">Aucun produit trouvé.</div>';document.getElementById('countLabel').textContent=filtered.length+" produit(s)";document.getElementById('featured').innerHTML=products.slice(0,6).map(productCard).join("");document.getElementById('productTotal').textContent=products.length+" références importées";document.getElementById('cartCount').textContent=Object.values(cart).reduce((a,b)=>a+b,0);renderCart();renderAdmin()}
+function showPage(page){document.querySelectorAll('main>section').forEach(s=>s.classList.add('hidden'));document.getElementById(page+'Page').classList.remove('hidden');document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===page));if(page==='products')render();window.scrollTo({top:0,behavior:'smooth'})}
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
+document.getElementById('search').addEventListener('input',render);document.getElementById('category').addEventListener('change',render);
+function addToCart(ref){cart[ref]=(cart[ref]||0)+1;render();alert("Produit ajouté au panier. La demande n’est pas encore envoyée à CABVEC.");}
+function renderCart(){let entries=Object.entries(cart);let box=document.getElementById('cartItems');if(!entries.length){box.innerHTML='<div class="empty">Votre panier est vide. Consultez le catalogue pour sélectionner des produits.</div>';document.getElementById('cartForm').classList.add('hidden');return}box.innerHTML=entries.map(([ref,qty])=>{let p=products.find(x=>x.ref===ref);return `<div class="row"><div><b>${esc(p?.name||ref)}</b><br><small>${esc(ref)} · ${priceText(p||{})}</small></div><div><button class="btn" onclick="changeQty('${escAttr(ref)}',-1)">−</button> ${qty} <button class="btn" onclick="changeQty('${escAttr(ref)}',1)">+</button></div></div>`}).join('');document.getElementById('cartForm').classList.remove('hidden')}
+function changeQty(ref,delta){cart[ref]=(cart[ref]||0)+delta;if(cart[ref]<=0)delete cart[ref];render()}
+function addProduct(){let ref=document.getElementById('newRef').value.trim(),name=document.getElementById('newName').value.trim();if(!ref||!name){alert("Renseignez la référence et la désignation.");return}if(products.some(p=>p.ref.toLowerCase()===ref.toLowerCase())){alert("Cette référence existe déjà.");return}let price=document.getElementById('newPrice').value;products.push({ref,name,category:document.getElementById('newCat').value,price:price?Number(price):"",photo:document.getElementById('newPhoto').value.trim()});localStorage.setItem('cabvec_demo_products',JSON.stringify(products));render();alert("Ajouté à la démonstration locale.")}
+function renderAdmin(){document.getElementById('adminSummary').innerHTML=`<div class="row"><span>Références au catalogue</span><b>${products.length}</b></div><div class="row"><span>Prix renseignés dans cette session</span><b>${products.filter(p=>p.price).length}</b></div><div class="row"><span>Éléments dans le panier de démonstration</span><b>${Object.values(cart).reduce((a,b)=>a+b,0)}</b></div>`}
+function exportProducts(){let blob=new Blob([JSON.stringify(products,null,2)],{type:'application/json'});let a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='cabvec-catalogue.json';a.click();URL.revokeObjectURL(a.href)}
+loadSupabaseConfig();
+render();
+</script>
+</body>
+</html>
